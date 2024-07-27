@@ -14,7 +14,7 @@ export default async ({ req, res, log, error }) => {
     let generation = result.response.text();
     log(generation);
 
-    res.json({
+    return res.json({
       result: generation
     });
   }
