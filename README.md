@@ -1,4 +1,4 @@
-🤖 Node Prompt Gemini Function
+# 🤖 Node Prompt Gemini Function
 
 Ask question, and let Google Gemini 1.5 Flash answer.
 
