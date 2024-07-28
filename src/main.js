@@ -2,20 +2,26 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export default async ({ req, res, log, error }) => {
   if (req.method === 'POST') {
-    if(!req.body || !req.body.prompt) {
+    if (!req.body || !req.body.prompt) {
       error('Missing prompt');
-      return res.json({
-        ok: false,
-        error: 'Missing prompt'
-      }, 400);
+      return res.json(
+        {
+          ok: false,
+          error: 'Missing prompt',
+        },
+        400
+      );
     }
 
-    if(!process.env.GEMINI_API_KEY) {
+    if (!process.env.GEMINI_API_KEY) {
       error('Missing Gemini API Key');
-      return res.json({
-        ok: false,
-        error: 'Missing Gemini API Key'
-      }, 500);
+      return res.json(
+        {
+          ok: false,
+          error: 'Missing Gemini API Key',
+        },
+        500
+      );
     }
 
     let prompt = req.body.prompt;
@@ -33,21 +39,23 @@ export default async ({ req, res, log, error }) => {
 
       return res.json({
         ok: true,
-        generation
+        generation,
       });
-    } catch(err) {
+    } catch (err) {
       error(err.message);
-      return res.json({
-        ok: false,
-        error: err.message
-      }, 500);
+      return res.json(
+        {
+          ok: false,
+          error: err.message,
+        },
+        500
+      );
     }
-  }
-  else {
+  } else {
     error('Only POST requests are valid');
     return res.json({
       ok: false,
-      error: 'Only POST requests are considered valid'
+      error: 'Only POST requests are considered valid',
     });
   }
 };

@@ -64,8 +64,8 @@ Response when the model fails to respond.
 
 A unique key used to authenticate with the Gemini API. Please note that this is a paid service and you will be charged for each request made to the API. For more information, see the [billing docs](https://ai.google.dev/gemini-api/docs/billing).
 
-| Question      | Answer                                                                      |
-| ------------- | --------------------------------------------------------------------------- |
-| Required      | Yes                                                                         |
-| Sample Value  | `AIz...7CQ`                                                                 |
-| Documentation | [Google Docs](https://ai.google.dev/gemini-api/docs/api-key)                |
+| Question      | Answer                                                       |
+| ------------- | ------------------------------------------------------------ |
+| Required      | Yes                                                          |
+| Sample Value  | `AIz...7CQ`                                                  |
+| Documentation | [Google Docs](https://ai.google.dev/gemini-api/docs/api-key) |
